@@ -1,0 +1,503 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
+
+
+*{
+  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  /* font-family: 'Poppins', sans-serif;    */
+
+}
+body{
+/* background-color: rgb(224, 214, 199); */
+position: relative;
+
+}
+
+/* header's css details */
+header{
+  font-style: italic;
+  background-color: hsla(32, 74%, 95%, 0.6);
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 70px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 50px;
+position: fixed;
+z-index: 50;
+/* border-bottom: 15px solid #2b3c75; */
+border-radius:0 0 30px  30px;
+
+}
+.logo{
+  font-weight: 800;
+  font-size: 1.5em;
+  text-shadow:5px 5px 5px  #1d7024 ;
+  margin-left: 40px;
+  text-transform: uppercase;
+
+  color: #4a4a04;
+  font-style: italic;
+ letter-spacing: 1px;
+ 
+}
+/** navigation bar style details  */
+nav{
+  
+  display: flex;
+  justify-content: space-between;
+align-items: center;
+
+}
+/*~related to search inputes*/
+input[type="text"] {
+  padding: 10px; 
+  width: 400px;
+  height: 40px;
+  border-radius:  10px  ;
+  background-color: #c9c0b6;
+  font-family:Georgia, Times, 'Times New Roman', serif ;
+}
+.Search_label{
+position: relative;
+left: -25px;
+}
+.navbar a,.categories_btn{
+  text-decoration: none;
+  font-size: 1.1em;
+color: rgb(250, 250, 252);
+padding: 5px;
+margin: 10px;
+background-color: #0e0e0f;
+border-radius: 20px 10px;
+}
+.navbar a:hover{
+  /* border: 1px solid  #159dbe; */
+  border-radius: 20px 10px;
+  background-color: #159dbe;
+  transition: .5s;
+}
+/*^related to drobdown list*/
+.categories_drobDown{
+  position: fixed;
+  z-index: 1000;
+  right:250px;
+  top:40px;
+  color: white;
+  font-weight: bold;
+letter-spacing: 1px;
+  background-color: #353a33;
+  padding: 5px;
+  display: none;
+animation: bom .4s ease-in-out;
+
+}
+.categories_drobDown p{
+  background-color: rgb(56, 59, 58);
+  padding: 2px;font-family: 'Times New Roman', Times, serif;
+transition: .5s ease;
+}
+.categories_drobDown p:hover{
+  background-color: rgb(127, 130, 129);
+
+}
+.categories_drobDown.show{
+  display: block ;
+  
+}
+
+/** navbare before sign in or sign up */
+#before_login a,.log_out{
+  background-color: #0e0e0f;
+  color: white;
+  margin: 1px;
+}
+
+#userName_enter{
+display: none;
+background-color: #0e0e0f;
+ color: aliceblue;
+ padding: 2px;
+ border-radius: 3px;
+}
+.log_out{
+  display: none ;
+}
+/*^ section main css details which contain first page*/
+.secmain{
+width: 100%;
+min-height: 70vh;
+display: flex;
+font-family: 'Poppins', sans-serif;
+align-items: center;
+padding: 0 3em;
+background-image:url(family55.jpg);
+position: relative;
+/* top: 60px; */
+background-color: #181731;
+background-size: cover;
+background-attachment: fixed;
+
+/* background-position:  90% 10% ; */
+color:#ebf3f0;
+
+}
+.main_description{
+width: 35%;
+}
+
+.secmain h1{
+  color: #0e0e0f;
+
+  font-size:1em;
+  font-weight: 500;
+  font-style: italic;
+} 
+.secmain h1 .title{
+  color:#5de05d;
+  font-size:1.5em;
+  font-style:italic;
+  display: inline-block; 
+  margin-top: 10px;
+}
+
+.secmain p{
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: #0e0e0f;
+}
+.secmain .main-btn{
+  text-decoration: none;
+  color:#fff;
+  background-color: #279605;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+padding: 5px;
+  border-radius: 15px;
+}
+.secmain .main-btn:hover{
+transform: scale(1.1);
+transition: 1s ease;
+}
+
+
+
+/** infobelongs to products section  */
+.category{  /*~ contain all header and products*/
+  text-align: center;
+}
+.head_products{
+color: rgb(62, 62, 4);
+ font-size: 70px;
+margin: auto;
+width:fit-content;
+font-style: italic;
+  
+}
+
+
+.secwomen,.secshoes,
+.seckids,.secmen{
+
+
+min-height: 100vh;
+width: 100%;
+display: none;
+}
+
+.pro_cat
+{        /*&which contain just products     */
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  flex-wrap: wrap;
+
+}
+
+
+.product{  /*&which contain one product     */
+  margin: 20px;
+  background-color: white;
+  /* border: 5px solid #AF9980; */
+  height: 400px;
+  width: 25%;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.product:hover img{
+  transform: scale(1.125);
+}
+
+.product img{
+  margin-top: 10px;
+  text-align: center;
+  object-fit:contain;
+  transition: .7s ease-in-out;
+
+}
+.product_name{
+  text-align: center;
+   margin-top: 10px;
+}
+
+.product-details {
+  margin-top: 10px;
+}
+
+
+.product_action .add_cart{
+  color: #fefffe;
+  letter-spacing: 1px;
+  cursor: pointer;
+  /* display: inline-block; */
+  padding: 8px;
+width: 50%;
+background-color: #67671b;
+}
+.product_action .fa-star{
+  color:#ffcc33 ;
+  font-size: medium;
+}
+
+/*~ favorite star */
+.product_action>.fa-solid{ 
+  display: none;
+}
+
+
+
+/** add to cart icon*/
+.fa-cart-shopping{
+  font-size: 20px;
+  color: #0f034b;
+}
+.count_products{
+  position: relative;
+  top:-20px;
+  right: 15px;
+  color: #4e0237;
+    font-family: 'Poppins', sans-serif;    
+
+
+}
+
+/** cart container  */
+
+
+
+.cart {
+  color: rgb(37, 5, 121);
+  padding: 20px;
+  background-color: rgb(161, 95, 9);
+  width: 80%;
+  border-radius: 20px;
+  position: fixed;
+  top: 90px;
+  right: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5000;
+  max-height: 85vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  overflow-y: scroll;
+  animation: bom .5s ;
+}
+.cart.active{
+  display:flex;
+}
+
+.content{
+  display: flex;
+   
+}
+.cart_calculation{
+  width: 30%;
+  text-align: center;
+ list-style-position: inside;
+ padding-top: 120px;
+ margin-top: 25px;
+height:50vh;
+background-color: rgb(124, 176, 133);
+border-radius: 20px;
+
+}
+
+.cart_products{
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  text-align: center;
+}
+
+
+.close{
+  border: none;
+  border-radius: 5px;
+  width: 50px;
+position: absolute;
+right: 0;
+
+background-color: rgb(142, 115, 115);
+color: aliceblue;
+font-size: 20px;
+margin: 7px;
+}
+
+
+@keyframes  bom{
+    
+  0%{
+transform: scale(0);
+  }
+  50%{
+      transform: scale(1.25);
+
+  }
+  100%{
+      transform: scale(1);
+
+  }
+}
+
+
+/* scrollbar details */
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(39, 144, 70); 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(73, 165, 76); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #349437; 
+}
+
+
+/** footer details style  */
+
+
+footer .container {
+  max-width: 1170px;
+  margin: auto;
+
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer {
+ 
+  width: 100%;
+  background-color: #c9c0b6;
+  padding: 30px 0;
+  font-family: 'Times New Roman';
+}
+
+.footer-co1 {
+  width: 25%;
+  padding: 0 15px;
+  font-style: italic;
+}
+
+.footer-co1 h3 {
+  font-size: 18px;
+  color: rgb(107, 106, 110);
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  font-style: italic;
+  position: relative;
+
+}
+
+.footer-co1 h3::before {
+  content: "";
+  position: absolute;
+  Left: 0;
+  bottom: -10px;
+  background-color: rgb(230, 227, 233);
+  height: 2px;
+  box-sizing: border-box;
+  width: 60px;
+}
+
+.footer-co1 ul li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.footer-co1 ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #bbaaaa;
+  text-decoration: none;
+  font-weight: 300;
+  color: black;
+  display: block;
+  transition: all 0.3s ease;
+ 
+}
+
+.footer-co1 ul li a:hover {
+  color: #ffffff;
+  padding-Left: 8px;
+}
+
+.social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  Line-height: 40px;
+  border-radius: 50%;
+  color: #3d3b3b;
+  transition: all 0.5s ease;
+}
+
+.social-links a:hover {
+  color: aliceblue;
+}
+
+.footer-bottom {
+  width: 100%;
+  margin-top: 20px;
+
+  text-align: center;
+
+}
+

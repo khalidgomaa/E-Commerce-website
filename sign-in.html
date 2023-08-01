@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-in </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="upstyle.css">
+</head>
+<body>
+  <header>
+    <a class="logo">E-Commerce</a>
+
+    <!--* Navigation details before submit or log-in  -->
+
+<div id="before_login">
+   <a href="sign-in.html">sign-in</a>
+   <a  href="sign-up.html">sign-up</a>
+</div>
+</header>
+
+  <div class="head_form">
+    <h1>sign-in</h1>
+  </div>
+  
+  <div class="container">
+      
+          <form id="form"  >
+
+            <!-- related to username -->
+        <div class="parent_input">
+          <label  for="username">Username Name</label>
+          <input id="username" placeholder="Please Enter Your Name" type="text"  >
+          <i class="fa-solid fa-circle-check"></i>
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <small>successful</small>
+        
+        </div>
+       <br>
+ 
+      
+
+   
+         <!-- related to  Password-->
+         <div class="parent_input ">
+    <label  for="password">Password</label>
+    <input id="password" placeholder="Please Enter Your Password" type="password"  >
+    <i class="fa-solid fa-circle-check"></i>
+    <i class="fa-solid fa-circle-exclamation"></i>
+    <small>successful</small>
+  </div>
+ <br>
+
+         <!-- related to  Confirm Password-->
+ 
+         <!-- <div class="parent_input  " >
+  <label  for="confpassword">Confirm Password</label>
+  <input id="confpassword" placeholder="Please Enter Your Password Again" type="password"  >
+  <i class="fa-solid fa-circle-check"></i>
+  <i class="fa-solid fa-circle-exclamation"></i>
+  <small>successful</small>
+</div>
+<br> -->
+     
+         <!-- related to  buttons submit & reset-->
+       
+       <div>
+         <input class="btn" id="submit" type="submit" value="Log-In">
+         
+       </div>
+      </form>
+       
+      </div>
+<script>
+  
+//gitting all element
+let form=document.getElementById("form")
+let username=document.getElementById("username")
+let password=document.getElementById("password")
+let confpassword=document.getElementById("confpassword")
+
+//event to submit
+form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    validatePassword();
+
+})
+// //call data from localstorage
+// let getuser=localStorage.getItem("username")
+// let getpassword=localStorage.getItem("password")
+// let getconfpassword=localStorage.getItem("confpassword")
+
+
+
+//function to make sure the data right
+function  validatePassword() {
+  if(username.value!= ''&&password.value!= ''){
+    let log_inUser={
+      "username":username.value,
+      "password":password.value,
+    }
+    let arrayUsersData = JSON.parse(localStorage.getItem('Users_data'));
+    for(let i = 0; i < arrayUsersData.length; i++){
+      if(log_inUser.username == arrayUsersData[i].username && log_inUser.password == arrayUsersData[i].password){
+        alert("Login successful!");
+        localStorage.setItem('userName', username.value);
+        setTimeout(()=>{
+            
+          window.location.href = "index.html";
+
+
+          
+        }, 5000)
+        return;
+      }
+    }
+    alert("Login failed.");
+  }
+}
+
+</script>
+</body>
+</html>

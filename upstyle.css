@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: #034826;
+    
+  }
+  
+    
+    /* header's css details */
+    header{
+      background-color: hsla(32, 74%, 95%, 0.6);
+      color: black;
+      font-family: 'Poppins', sans-serif;   
+
+      width: 100%;
+      height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    border-bottom: 15px solid #2b3c75;
+    border-radius:0 0 30px  30px;
+    
+    }
+    .logo{
+      font-weight: 800;
+      font-size: 1.5em;
+      text-shadow:5px 5px 5px  #1d7024 ;
+
+      margin-left: 40px;
+      text-transform: uppercase;
+      color: #4a4a04;
+      font-style: italic;
+     letter-spacing: 1px;
+     
+    }
+    #before_login a,.log_out
+    {
+    text-decoration: none;
+    font-size: 1.1em;
+  color: rgb(250, 250, 252);
+  padding: 10px;
+  margin: 10px;
+  background-color: #0e0e0f;
+  color: white;
+  margin: 1px;
+  border-radius: 20px 10px;
+  }
+    /** navigation bar style details  */
+   
+    /*~related to search inputes*/
+   
+  
+   
+    /** navbare before sign in or sign up */
+    #before_login{
+      display:block;
+    }
+  /* header style */
+  .head_form {
+    background-color: hsl(173, 43%, 37%);
+    color: #fff;
+    width:462px;
+    text-align: center;
+    
+    border-radius: 2px 40px;
+    margin: auto;
+   margin-top: 100px;
+ 
+  }
+/* which contain the form */
+.container {
+width:440px;
+
+background-color: hsla(32, 58%, 37%, 0.9);
+padding: 20px;
+border-radius: 5px;
+color: rgb(245, 248, 250);
+margin: auto;
+display: flex;
+flex-wrap: wrap;
+
+}
+
+/*related div of every input */
+.parent_input{
+  position: relative;
+}
+label {
+display: block;
+letter-spacing: 1px;
+
+font-style: italic;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+}
+
+input {
+width: 400px;
+height: 30px;
+padding: 10px;
+border: 2px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+background-color:#ccc;
+}
+
+/* related to fa-circle awsome icons */
+.parent_input i{
+  position: absolute;
+  right: 3%;
+  top: 27px;
+  
+}
+small,i{
+  visibility: hidden;
+}
+
+
+
+/* after giving .parent_input the new class  */
+
+/* for is-invalid class */
+.is-invalid input{
+  border-color:rgb(184, 28, 28);
+}
+.is-invalid .fa-circle-exclamation{
+  color:rgb(184, 28, 28);
+  visibility:visible;
+}
+.is-invalid small{
+  color:rgb(184, 28, 28);
+  visibility:visible;
+}
+/* for is-valid class */
+.is-valid  input{
+  border-color: rgb(129, 205, 16);
+}
+.is-valid .fa-circle-check{
+  color: rgb(129, 205, 16);
+  visibility:visible;
+}
+
+.is-valid  small{
+  color: rgb(129, 205, 16);
+  visibility:visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* related to submit button and reset button */
+.btn{
+    background-color: #4CAF50;
+    width: 75px;
+    padding: 0px;
+    height: 35px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+      text-align: center;
+       text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: 1s ease;
+}
+/* input[type="reset"] {
+  background-color: #6f302a;
+} */
+.btn:hover{
+ transform: scale(1.05);
+}
+
+
