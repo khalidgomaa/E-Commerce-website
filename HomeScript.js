@@ -488,19 +488,28 @@ close.addEventListener("click",function(){
   //   cartArray=[]
   // }}
   // saveTheLastData ()
-cart_counter() //~to show the img which say there is no product in the cart 
-let cartArray=[];
-  function toArray(id){
+
+  let products_storage = JSON.parse(localStorage.getItem("cart_products"));
+  let cartArray = products_storage? products_storage : [];
+
+// cart_counter() //~to show the img which say there is no product in the cart 
+function toArray(id) {
+  let product = products_js.find(product => product.id == id);
+
+    let index = cartArray.findIndex(ele => ele.id == id);
+    if (index == -1) {
+      cartArray=[...cartArray,product]
+      console.log(cartArray)
+      toCart()
+      localStorage.setItem('cart_products', JSON.stringify(cartArray));
+     
+      calculatePrice();
+    } else {
+      alert('Product already exists in cart');
+    }
    
-    for(let i=0;i<products_js.length;i++){
-      if (products_js[i].id == id) {
-        cartArray.push(products_js[i])
-            localStorage.setItem('cart_products', JSON.stringify(cartArray));
-        calculatePrice()
-        toCart()
-       
-    } 
-   }}
+  }
+
  //&* another way or i can use find function
 //  function toArray(id) {
 //   let product = products_js.find(product => product.id == id);
@@ -511,55 +520,63 @@ let cartArray=[];
 // }
 
 //* function to add elements of array in the cart
-
+toCart()
 function toCart(){
-  console.log(cartArray)
-  let choosenProduct='';
- for(let i=0;i<cartArray.length;i++){
 
- choosenProduct= `
+  // debugger
+  // if(localStorage.getItem("cart_products")){
+  //   cartArray=JSON.parse(localStorage.getItem("cart_products"))
+  // }
+  let choosenProduct =''
+
+  for(let i=0;i<cartArray.length;i++){
+  choosenProduct= ` 
   <div style="height:365px;   width:300px;" class="product">
   <img src=${cartArray[i].imgUrl}>
+
   <div class="product_details">
   <h3 class="product_name">${cartArray[i].name_product}</h3>
   <p> ${cartArray[i].category}</p>
   <p> ${cartArray[i].price}</p>
   </div>
  <i  style="color:red; font-size:25px;" class="< fa-solid fa-trash removeBtn"> </i>
-  `  
-}
-  cart_products.innerHTML+=choosenProduct
-  console.log(choosenProduct)
+  ` 
 
+            }
+            cart_products.innerHTML+=choosenProduct
+            // console.log(choosenProduct)
+            // console.log(cartArray)
+            // console.log(cart_products) 
+  // console.log(choosenProduct)
+ 
   removeProduct()
-  cart_counter()
+  // cart_counter()
 }
-  
+toCart()
  
 
 
 
-  //* function to count products in cart
-function cart_counter(){
-  let count_products=document.querySelector(".count_products");
-  let cart_product_img = document.createElement("img")
-  cart_product_img.src="./cart is empty.PNG"
+//   //* function to count products in cart
+// function cart_counter(){
+//   let count_products=document.querySelector(".count_products");
+//   let cart_product_img = document.createElement("img")
+//   cart_product_img.src="./cart is empty.PNG"
 
   
-  if (cart_products.children.length == 0 ) {
+//   if (cart_products.children.length === 0 ) {
    
-    cart_products.innerHTML = '';
-    cart_products.appendChild(cart_product_img);
-    count_products.innerHTML = cart_products.children.length-1
-  }
+    
+//     cart_products.appendChild(cart_product_img);
+//     count_products.innerHTML = cart_products.children.length-1}
      
-  else {
+//   else {
 
-    cart_products.removeChild(cart_products.firstChild);
-    count_products.innerHTML = cart_products.children.length
-  }
+//  cart_product_img.remove()
+//     count_products.innerHTML = cart_products.children.length
+//   }
 
-  }
+//   }
       
 
 
@@ -571,7 +588,7 @@ function removeProduct(){
   removeBtn.forEach(btn=>{
     btn.addEventListener("click",(e)=>{ 
       e.target.parentNode.remove()
-      cart_counter(); // call the cart_counter function to update the cart counter
+      // cart_counter(); // call the cart_counter function to update the cart counter
       calculatePrice()
     });
   });
