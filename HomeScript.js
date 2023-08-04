@@ -40,70 +40,20 @@ setInterval(
   
 //* product data entery  Array which is thecore of our website
 let products_js = [
-
   {
-    id: "1",
-    imgUrl: "./products/w1.jpeg",
-    name_product: "STRIPED SHIRT DRESS ",
-    price: "1.299 EGP",
-    category: "women product "
-  },
-
-  {
-    id: "2",
-    imgUrl: "./products/w2.jpeg",
-    name_product: "Buffy Sleeves Brown Dress",
-    price: "1.100 EGP",
-    category: "women product "
-  },
-
-  {
-    id: "3",
-    imgUrl: "./products/w3.jpeg",
-    name_product: "Mint Silk Blouse",
-    price: "750 EGP",
-    category: "women product "
+    id: "15",
+    imgUrl: "./products/men4.jpeg",
+    name_product: "Regular White shirt ",
+    price: "699 EGP",
+    category: "Men product "
   },
   {
-    id: "4",
-    imgUrl: "./products/w4.jpeg",
-    name_product: "Buffy Sleeves Cotton Blouse",
-    price: "750 EGP",
-    category: "women product "
-  },
 
-
-  {
-    id: "5",
-    imgUrl: "./products/w5.jpeg",
-    name_product: "Maxi wrap dress",
-    price: " 999 EGP",
-    category: "women product "
-  },
-
-  {
-    id: "6",
-    imgUrl: "./products/w6.jpeg",
-    name_product: "Floral print shirt dress with long sleeves ",
-    price: " 750 EGP",
-    category: "women product "
-  },
-
-
-  {
-    id: "7",
-    imgUrl: "./products/w7.jpeg",
-    name_product: "Textured Round Neck Top with Short Sleeves ",
-    price: "350 EGP",
-    category: "women product "
-  },
-
-  {
-    id: "8",
-    imgUrl: "./products/w8.jpeg",
-    name_product: "Striped Suit with Short Sleeves ",
-    price: "850 EGP",
-    category: "women product "
+    id: "47",
+    imgUrl: "./products/sh12.jpeg",
+    name_product: "second",
+    price: "899 EGP",
+    category: "shoes product "
   },
 
 
@@ -115,13 +65,27 @@ let products_js = [
     category: "women product "
   },
   {
-    id: "10",
-    imgUrl: "./products/w10.jpeg",
-    name_product: "Short Green Skirt ",
-    price: "650 EGP",
-    category: "women product "
+    id: "27",
+    imgUrl: "./products/kid4.jpeg",
+    name_product: "2-pice suit ",
+    price: "750 EGP",
+    category: "kids product "
   },
-
+  {
+    id: "38",
+    imgUrl: "./products/sh3.jpeg",
+    name_product: "second",
+    price: "600 EGP",
+    category: "shoes product "
+  },
+  {
+    id: "28",
+    imgUrl: "./products/kid5.jpeg",
+    name_product: "COMFORT BAGGY SHORT JEANS ",
+    price: "650 EGP",
+    category: "kids product "
+  },
+  
   {
     id: "11",
     imgUrl: "./products/w11.jpeg",
@@ -129,15 +93,51 @@ let products_js = [
     price: "1.199 EGP",
     category: "women product "
   },
+
   {
-    id: "12",
-    imgUrl: "./products/w12.jpeg",
-    name_product: "Belted midi dress ",
+    id: "16",
+    imgUrl: "./products/men5.jpeg",
+    name_product: "Regular Fit Oxford shirt ",
     price: "799 EGP",
+    category: "Men product "
+  },
+  {
+    id: "43",
+    imgUrl: "./products/sh8.jpeg",
+    name_product: "second",
+    price: "600 EGP",
+    category: "shoes product "
+  },
+  {
+    id: "29",
+    imgUrl: "./products/kid6.jpeg",
+    name_product: "Dun-till Short Skirt",
+    price: "450 EGP",
+    category: "kids product "
+  },
+  {
+    id: "10",
+    imgUrl: "./products/w10.jpeg",
+    name_product: "Short Green Skirt ",
+    price: "650 EGP",
     category: "women product "
   },
-
-
+ 
+  {
+    id: "39",
+    imgUrl: "./products/sh4.jpeg",
+    name_product: "second",
+    price: "600 EGP",
+    category: "shoes product "
+  },
+ 
+  {
+    id: "2",
+    imgUrl: "./products/w2.jpeg",
+    name_product: "Buffy Sleeves Brown Dress",
+    price: "1.100 EGP",
+    category: "women product "
+  },
 
   {
     id: "13",
@@ -148,32 +148,20 @@ let products_js = [
   },
 
   {
-    id: "14",
-    imgUrl: "./products/men2.jpeg",
-    name_product: "PRINTED RIPPED T-SHIRT ",
-    price: "1,100 EGP",
-    category: "Men product "
+    id: "25",
+    imgUrl: "./products/kid2.jpeg",
+    name_product: "Oversize T-Shirt ",
+    price: "450 EGP",
+    category: "kids product "
   },
 
-
-
   {
-    id: "15",
-    imgUrl: "./products/men4.jpeg",
-    name_product: "Regular White shirt ",
-    price: "699 EGP",
-    category: "Men product "
-  },
-
-
-  {
-    id: "16",
-    imgUrl: "./products/men5.jpeg",
-    name_product: "Regular Fit Oxford shirt ",
+    id: "12",
+    imgUrl: "./products/w12.jpeg",
+    name_product: "Belted midi dress ",
     price: "799 EGP",
-    category: "Men product "
+    category: "women product "
   },
-
   {
     id: "17",
     imgUrl: "./products/men6.jpeg",
@@ -190,6 +178,14 @@ let products_js = [
     category: "Men product "
   },
 
+
+  {
+    id: "30",
+    imgUrl: "./products/kid7.jpeg",
+    name_product: "Bow Front Puff Sleeve Dress ",
+    price: "750 EGP",
+    category: "kids product "
+  },
   {
     id: "19",
     imgUrl: "./products/men8.jpeg",
@@ -197,30 +193,41 @@ let products_js = [
     price: "1.899 EGP",
     category: "Men product "
   },
-
+  
+ 
   {
-    id: "20",
-    imgUrl: "./products/men9.jpeg",
-    name_product: "Regular Fit Resort shirt ",
-    price: "1.399 EGP",
-    category: "Men product "
+    id: "8",
+    imgUrl: "./products/w8.jpeg",
+    name_product: "Striped Suit with Short Sleeves ",
+    price: "850 EGP",
+    category: "women product "
   },
 
   {
-    id: "21",
-    imgUrl: "./products/men10.jpeg",
-    name_product: "COTTON HOODIE T-SHIRT ",
-    price: "799 EGP",
+    id: "37",
+    imgUrl: "./products/sh2.jpeg",
+    name_product: "second",
+    price: "600 EGP",
+    category: "shoes product "
+  },
+  {
+    id: "14",
+    imgUrl: "./products/men2.jpeg",
+    name_product: "PRINTED RIPPED T-SHIRT ",
+    price: "1,100 EGP",
     category: "Men product "
   },
 
+ 
+ 
   {
-    id: "22",
-    imgUrl: "./products/men11.jpeg",
-    name_product: "Oversized Fit T- shirt ",
-    price: "499 EGP",
-    category: "Men product "
+    id: "4",
+    imgUrl: "./products/w4.jpeg",
+    name_product: "Buffy Sleeves Cotton Blouse",
+    price: "750 EGP",
+    category: "women product "
   },
+
   {
     id: "23",
     imgUrl: "./products/men12.jpeg",
@@ -229,7 +236,6 @@ let products_js = [
     category: "Men product "
   },
 
-
   {
     id: "24",
     imgUrl: "./products/kid1.jpeg",
@@ -237,13 +243,47 @@ let products_js = [
     price: "1.100 EGP",
     category: "kids product "
   },
+ 
+
 
   {
-    id: "25",
-    imgUrl: "./products/kid2.jpeg",
-    name_product: "Oversize T-Shirt ",
-    price: "450 EGP",
+    id: "44",
+    imgUrl: "./products/sh9.jpeg",
+    name_product: "second",
+    price: "600 EGP",
+    category: "shoes product "
+  },
+  {
+    id: "22",
+    imgUrl: "./products/men11.jpeg",
+    name_product: "Oversized Fit T- shirt ",
+    price: "499 EGP",
+    category: "Men product "
+  },
+  {
+    id: "45",
+    imgUrl: "./products/sh10.jpeg",
+    name_product: "second",
+    price: "600 EGP",
+    category: "shoes product "
+  },
+
+
+  {
+    id: "31",
+    imgUrl: "./products/kid8.jpeg",
+    name_product: "Ruffle Trim Babydoll Dress ",
+    price: "850 EGP",
     category: "kids product "
+  },
+
+
+  {
+    id: "7",
+    imgUrl: "./products/w7.jpeg",
+    name_product: "Textured Round Neck Top with Short Sleeves ",
+    price: "350 EGP",
+    category: "women product "
   },
 
   {
@@ -253,62 +293,14 @@ let products_js = [
     price: "750 EGP",
     category: "kids product "
   },
-
   {
-    id: "27",
-    imgUrl: "./products/kid4.jpeg",
-    name_product: "2-pice suit ",
+    id: "3",
+    imgUrl: "./products/w3.jpeg",
+    name_product: "Mint Silk Blouse",
     price: "750 EGP",
-    category: "kids product "
+    category: "women product "
   },
-
-  {
-    id: "28",
-    imgUrl: "./products/kid5.jpeg",
-    name_product: "COMFORT BAGGY SHORT JEANS ",
-    price: "650 EGP",
-    category: "kids product "
-  },
-
-  {
-    id: "29",
-    imgUrl: "./products/kid6.jpeg",
-    name_product: "Dun-till Short Skirt",
-    price: "450 EGP",
-    category: "kids product "
-  },
-
-  {
-    id: "30",
-    imgUrl: "./products/kid7.jpeg",
-    name_product: "Bow Front Puff Sleeve Dress ",
-    price: "750 EGP",
-    category: "kids product "
-  },
-
-  {
-    id: "31",
-    imgUrl: "./products/kid8.jpeg",
-    name_product: "Ruffle Trim Babydoll Dress ",
-    price: "850 EGP",
-    category: "kids product "
-  },
-  {
-    id: "32",
-    imgUrl: "./products/kid9.jpeg",
-    name_product: "Puff Sleeves Backless Party Dress ",
-    price: " 899 EGP",
-    category: "kids product "
-  },
-
-  {
-    id: "33",
-    imgUrl: "./products/kid10.jpeg",
-    name_product: "Full White Suit ",
-    price: "890 EGP",
-    category: "kids product "
-  },
-
+ 
   {
     id: "34",
     imgUrl: "./products/kid11.jpeg",
@@ -316,16 +308,6 @@ let products_js = [
     price: "450  EGP",
     category: "kids product "
   },
-
-  {
-    id: "35",
-    imgUrl: "./products/kid12.jpeg",
-    name_product: "Full Suit Baby Blue",
-    price: "850 EGP",
-    category: "kids product "
-  },
-
-
 
   {
     id: "36",
@@ -336,27 +318,18 @@ let products_js = [
   },
 
   {
-    id: "37",
-    imgUrl: "./products/sh2.jpeg",
-    name_product: "second",
-    price: "600 EGP",
-    category: "shoes product "
-  },
-
-
-  {
-    id: "38",
-    imgUrl: "./products/sh3.jpeg",
-    name_product: "second",
-    price: "600 EGP",
-    category: "shoes product "
+    id: "33",
+    imgUrl: "./products/kid10.jpeg",
+    name_product: "Full White Suit ",
+    price: "890 EGP",
+    category: "kids product "
   },
   {
-    id: "39",
-    imgUrl: "./products/sh4.jpeg",
-    name_product: "second",
-    price: "600 EGP",
-    category: "shoes product "
+    id: "6",
+    imgUrl: "./products/w6.jpeg",
+    name_product: "Floral print shirt dress with long sleeves ",
+    price: " 750 EGP",
+    category: "women product "
   },
 
   {
@@ -366,7 +339,13 @@ let products_js = [
     price: "600 EGP",
     category: "shoes product "
   },
-
+  {
+    id: "5",
+    imgUrl: "./products/w5.jpeg",
+    name_product: "Maxi wrap dress",
+    price: " 999 EGP",
+    category: "women product "
+  },
   {
     id: "41",
     imgUrl: "./products/sh6.jpeg",
@@ -374,6 +353,15 @@ let products_js = [
     price: "600 EGP",
     category: "shoes product "
   },
+  {
+    id: "32",
+    imgUrl: "./products/kid9.jpeg",
+    name_product: "Puff Sleeves Backless Party Dress ",
+    price: " 899 EGP",
+    category: "kids product "
+  },
+
+ 
 
   {
     id: "42",
@@ -383,27 +371,24 @@ let products_js = [
     category: "shoes product "
   },
 
-  {
-    id: "43",
-    imgUrl: "./products/sh8.jpeg",
-    name_product: "second",
-    price: "600 EGP",
-    category: "shoes product "
-  },
+
 
   {
-    id: "44",
-    imgUrl: "./products/sh9.jpeg",
-    name_product: "second",
-    price: "600 EGP",
-    category: "shoes product "
+    id: "21",
+    imgUrl: "./products/men10.jpeg",
+    name_product: "COTTON HOODIE T-SHIRT ",
+    price: "799 EGP",
+    category: "Men product "
   },
+
+
+  
   {
-    id: "45",
-    imgUrl: "./products/sh10.jpeg",
-    name_product: "second",
-    price: "600 EGP",
-    category: "shoes product "
+    id: "35",
+    imgUrl: "./products/kid12.jpeg",
+    name_product: "Full Suit Baby Blue",
+    price: "850 EGP",
+    category: "kids product "
   },
 
   {
@@ -413,12 +398,13 @@ let products_js = [
     price: "600 EGP",
     category: "shoes product "
   },
+ 
   {
-    id: "47",
-    imgUrl: "./products/sh12.jpeg",
-    name_product: "second",
-    price: "899 EGP",
-    category: "shoes product "
+    id: "1",
+    imgUrl: "./products/w1.jpeg",
+    name_product: "STRIPED SHIRT DRESS ",
+    price: "1.299 EGP",
+    category: "women product "
   },
 
   {
@@ -426,6 +412,13 @@ let products_js = [
     imgUrl: "./products/men3.jpeg",
     name_product: "SOFT WAFFLE HOODIE T-SHIRT ",
     price: "899 EGP",
+    category: "Men product "
+  },
+  {
+    id: "20",
+    imgUrl: "./products/men9.jpeg",
+    name_product: "Regular Fit Resort shirt ",
+    price: "1.399 EGP",
     category: "Men product "
   }
 ]
