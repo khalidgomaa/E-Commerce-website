@@ -464,6 +464,7 @@ let fa_cart_shopping   =document.querySelector(".fa-cart-shopping") //^basket of
 
 let cart_products       =document.querySelector(".cart_products")  //^ which contain products i added them to cart
 
+let count_products=     document.querySelector(".count_products");//*basket counter
 
 //~to show the cart window
 fa_cart_shopping.addEventListener("click",function(){
@@ -540,14 +541,15 @@ function toCart(){
   <p> ${cartArray[i].category}</p>
   <p> ${cartArray[i].price}</p>
   </div>
- <i  style="color:red; font-size:25px;" class="< fa-solid fa-trash removeBtn"> </i>
+ <i onclick="removeProduct(${i})" style="color:red; font-size:25px;" class="< fa-solid fa-trash removeBtn"> </i>
   ` ;
   cart_products.innerHTML+=choosenProduct
+  count_products.innerHTML=cartArray.length
             }
             
             // console.log(cart_products)
             console.log(choosenProduct)
-  removeProduct()
+
   // cart_counter()
 }
 toCart()
@@ -556,41 +558,46 @@ toCart()
 
 
 //   //* function to count products in cart
-// function cart_counter(){
-//   let count_products=document.querySelector(".count_products");
-//   let cart_product_img = document.createElement("img")
-//   cart_product_img.src="./cart is empty.PNG"
+
+function cart_counter(){
+
+  let cart_product_img = document.createElement("img")
+  cart_product_img.src="./cart is empty.PNG"
 
   
-//   if (cart_products.children.length === 0 ) {
+  if (cart_products.children.length === 0 ) {
    
     
-//     cart_products.appendChild(cart_product_img);
-//     count_products.innerHTML = cart_products.children.length-1}
+    cart_products.appendChild(cart_product_img);
+    count_products.innerHTML = cart_products.children.length-1}
      
-//   else {
+  else {
 
-//  cart_product_img.remove()
-//     count_products.innerHTML = cart_products.children.length
-//   }
+ cart_product_img.remove()
+    count_products.innerHTML = cart_products.children.length
+  }
 
-//   }
+  }
       
 
 
 //^ task to remove product from cart
 
-function removeProduct(){
-  let removeBtn          =document.querySelectorAll(".removeBtn");
+function removeProduct(i){
 
-  removeBtn.forEach(btn=>{
-    btn.addEventListener("click",(e)=>{ 
-      e.target.parentNode.remove()
+ 
+cartArray.splice(i,1)
+console.log(cartArray)
+
+localStorage.cart_products=JSON.stringify(cartArray)
+count_products.innerHTML=cartArray.length
+
       // cart_counter(); // call the cart_counter function to update the cart counter
       calculatePrice()
-    });
-  });
-}
+      toCart()
+    }
+  ;
+
 
 
 
@@ -599,7 +606,7 @@ function calculatePrice(){
   
   let totalPrice = cartArray.reduce((acc, product) => parseFloat(acc) + parseFloat(product.price),0);
   document.querySelector('.total_price').innerHTML=`Total Price: ${totalPrice} EGP`;
-  removeProduct()
+ 
 }
 calculatePrice()
 
