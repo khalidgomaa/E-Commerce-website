@@ -208,8 +208,6 @@ font-style: italic;
 
 .secwomen,.secshoes,
 .seckids,.secmen{
-
-
 min-height: 100vh;
 width: 100%;
 display: none;
@@ -277,8 +275,6 @@ background-color: #67671b;
   display: none;
 }
 
-
-
 /** add to cart icon*/
 .fa-cart-shopping{
   font-size: 20px;
@@ -290,13 +286,9 @@ background-color: #67671b;
   right: 15px;
   color: #4e0237;
     font-family: 'Poppins', sans-serif;    
-
-
 }
 
 /** cart container  */
-
-
 
 .cart {
   color: rgb(37, 5, 121);

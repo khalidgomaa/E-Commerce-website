@@ -144,7 +144,7 @@ let products_js = [
     imgUrl: "./products/men1.jpeg",
     name_product: "Slim-fit chambray cotton shirt ",
     price: "1.100 EGP",
-    category: "men product "
+    category: "Men product "
   },
 
   {
@@ -152,7 +152,7 @@ let products_js = [
     imgUrl: "./products/men2.jpeg",
     name_product: "PRINTED RIPPED T-SHIRT ",
     price: "1,100 EGP",
-    category: "men product "
+    category: "Men product "
   },
 
 
@@ -162,7 +162,7 @@ let products_js = [
     imgUrl: "./products/men4.jpeg",
     name_product: "Regular White shirt ",
     price: "699 EGP",
-    category: "men product "
+    category: "Men product "
   },
 
 
@@ -171,7 +171,7 @@ let products_js = [
     imgUrl: "./products/men5.jpeg",
     name_product: "Regular Fit Oxford shirt ",
     price: "799 EGP",
-    category: "men product "
+    category: "Men product "
   },
 
   {
@@ -179,7 +179,7 @@ let products_js = [
     imgUrl: "./products/men6.jpeg",
     name_product: "Regular Fit Linen-blend shirt",
     price: "1.299 EGP",
-    category: "men product "
+    category: "Men product "
   },
 
   {
@@ -187,7 +187,7 @@ let products_js = [
     imgUrl: "./products/men7.jpeg",
     name_product: "Slim-fit COTTON T-Shirt ",
     price: "799 EGP",
-    category: "men product "
+    category: "Men product "
   },
 
   {
@@ -195,7 +195,7 @@ let products_js = [
     imgUrl: "./products/men8.jpeg",
     name_product: "STAND-UP COLLAR SHIRT ",
     price: "1.899 EGP",
-    category: "men product "
+    category: "Men product "
   },
 
   {
@@ -203,7 +203,7 @@ let products_js = [
     imgUrl: "./products/men9.jpeg",
     name_product: "Regular Fit Resort shirt ",
     price: "1.399 EGP",
-    category: "men product "
+    category: "Men product "
   },
 
   {
@@ -211,7 +211,7 @@ let products_js = [
     imgUrl: "./products/men10.jpeg",
     name_product: "COTTON HOODIE T-SHIRT ",
     price: "799 EGP",
-    category: "men product "
+    category: "Men product "
   },
 
   {
@@ -219,14 +219,14 @@ let products_js = [
     imgUrl: "./products/men11.jpeg",
     name_product: "Oversized Fit T- shirt ",
     price: "499 EGP",
-    category: "men product "
+    category: "Men product "
   },
   {
     id: "23",
     imgUrl: "./products/men12.jpeg",
     name_product: "Regular Fit Linen-blend shirt ",
     price: "1.199 EGP",
-    category: "men product "
+    category: "Men product "
   },
 
 
@@ -426,7 +426,7 @@ let products_js = [
     imgUrl: "./products/men3.jpeg",
     name_product: "SOFT WAFFLE HOODIE T-SHIRT ",
     price: "899 EGP",
-    category: "men product "
+    category: "Men product "
   }
 ]
 //~ get element which contain allProducts 
@@ -493,7 +493,7 @@ close.addEventListener("click",function(){
   let products_storage = JSON.parse(localStorage.getItem("cart_products"));
   let cartArray = products_storage? products_storage : [];
 
-// cart_counter() //~to show the img which say there is no product in the cart 
+// emptyCart() //~to show the img which say there is no product in the cart 
 function toArray(id) {
   let product = products_js.find(product => product.id == id);
 
@@ -550,7 +550,7 @@ function toCart(){
             // console.log(cart_products)
             console.log(choosenProduct)
 
-  // cart_counter()
+  // emptyCart()
 }
 toCart()
  
@@ -559,13 +559,13 @@ toCart()
 
 //   //* function to count products in cart
 
-function cart_counter(){
+function emptyCart(){
 
   let cart_product_img = document.createElement("img")
   cart_product_img.src="./cart is empty.PNG"
 
   
-  if (cart_products.children.length === 0 ) {
+  if (cartArray.length === 0 ) {
    
     
     cart_products.appendChild(cart_product_img);
@@ -575,10 +575,10 @@ function cart_counter(){
 
  cart_product_img.remove()
     count_products.innerHTML = cart_products.children.length
-  }
-
-  }
-      
+   
+          }
+                  }
+  emptyCart()   
 
 
 //^ task to remove product from cart
@@ -592,9 +592,10 @@ console.log(cartArray)
 localStorage.cart_products=JSON.stringify(cartArray)
 count_products.innerHTML=cartArray.length
 
-      // cart_counter(); // call the cart_counter function to update the cart counter
+      // emptyCart(); // call the emptyCart function to update the cart counter
       calculatePrice()
       toCart()
+      emptyCart()
     }
   ;
 
@@ -683,7 +684,7 @@ let all_kichen_products=document.querySelector(".all_kichen_products")
  function addelmenProduct() {
 let men_product=""
    for (let i = 0; i < products_js.length; i++) {
-     if (products_js[i].category.includes("men")) {
+     if (products_js[i].category.includes("Men")) {
       
        men_product += `
          <div class="product">
