@@ -500,16 +500,16 @@ function toArray(id) {
     if (index == -1) {
       cartArray=[...cartArray,product]
       console.log(cartArray)
-      toCart()
-      localStorage.setItem('cart_products', JSON.stringify(cartArray));
      
+      localStorage.setItem('cart_products', JSON.stringify(cartArray));
+      toCart()
       calculatePrice();
     } else {
       alert('Product already exists in cart');
     }
-   
+  
   }
-
+ 
  //&* another way or i can use find function
 //  function toArray(id) {
 //   let product = products_js.find(product => product.id == id);
@@ -517,10 +517,10 @@ function toArray(id) {
 //     cartArray.push(product);
 //     toCart();
 //   }
-// }
+// }6                                                          
 
 //* function to add elements of array in the cart
-toCart()
+
 function toCart(){
 
   // debugger
@@ -528,8 +528,9 @@ function toCart(){
   //   cartArray=JSON.parse(localStorage.getItem("cart_products"))
   // }
   let choosenProduct="" ;
- 
+  cart_products.innerHTML=""
   for(let i=0;i<cartArray.length;i++){
+    
   choosenProduct= ` 
   <div style="height:365px;   width:300px;" class="product">
   <img src=${cartArray[i].imgUrl}>
@@ -543,12 +544,9 @@ function toCart(){
   ` ;
   cart_products.innerHTML+=choosenProduct
             }
-          
-            // console.log(choosenProduct)
-            // console.log(cartArray)
-            // console.log(cart_products) 
-  // console.log(choosenProduct)
- 
+            
+            // console.log(cart_products)
+            console.log(choosenProduct)
   removeProduct()
   // cart_counter()
 }
