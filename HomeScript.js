@@ -527,8 +527,8 @@ function toCart(){
   // if(localStorage.getItem("cart_products")){
   //   cartArray=JSON.parse(localStorage.getItem("cart_products"))
   // }
-  let choosenProduct =''
-
+  let choosenProduct="" ;
+ 
   for(let i=0;i<cartArray.length;i++){
   choosenProduct= ` 
   <div style="height:365px;   width:300px;" class="product">
@@ -540,10 +540,10 @@ function toCart(){
   <p> ${cartArray[i].price}</p>
   </div>
  <i  style="color:red; font-size:25px;" class="< fa-solid fa-trash removeBtn"> </i>
-  ` 
-
+  ` ;
+  cart_products.innerHTML+=choosenProduct
             }
-            cart_products.innerHTML+=choosenProduct
+          
             // console.log(choosenProduct)
             // console.log(cartArray)
             // console.log(cart_products) 
