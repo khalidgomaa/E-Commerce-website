@@ -197,12 +197,22 @@ transition: 1s ease;
   text-align: center;
 }
 .head_products{
-color: rgb(62, 62, 4);
- font-size: 70px;
+
+ font-size: 50px;
 margin: auto;
 width:fit-content;
 font-style: italic;
-  
+background-color: #171616;
+/* width: 600px; */
+color: #fff;
+
+margin:20px auto;
+text-align: center;
+font-style: italic;
+border-radius:  10px 100px;
+border-bottom: 10px solid rgb(147, 152, 153);
+padding-left: 40px;
+padding-right: 40px;
 }
 
 
@@ -423,8 +433,14 @@ footer {
   width: 25%;
   padding: 0 15px;
   font-style: italic;
+  cursor: pointer;
 }
+.footer-co1 li:hover{
+  transform: scaleY(1.2);
+  color: rgb(107, 106, 110);
 
+  transition: all 0.3s ease;
+}
 .footer-co1 h3 {
   font-size: 18px;
   color: rgb(107, 106, 110);
