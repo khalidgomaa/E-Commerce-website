@@ -89,7 +89,7 @@ let products_js = [
   {
     id: "11",
     imgUrl: "./products/w11.jpeg",
-    name_product: "Sleeve Broderie-Anglaise Cotton Shirtdress ",
+    name_product: "Sleeve Broderie- Shirtdress ",
     price: "1.199 EGP",
     category: "women product "
   },
@@ -432,15 +432,23 @@ let productHtml=products_js.map((product)=>{
 <div class="product">
 <img src=${product.imgUrl}>
 <div class="product_details">
-<h3 class="product_name">${product.name_product.toLocaleLowerCase()}</h3>
+<h3 class="product_name">${product.name_product.toLowerCase()}</h3>
 <p> ${product.category.toLocaleLowerCase()}</p>
 <p> ${product.price}</p>
+</div>
+<div id="container_stars">
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i><br>
+<span style="color:blue"></span>
+
 </div>
 <div class="product_action">
             <button class="add_cart" onclick="toArray(${product.id})">add to cart  <i class="fa-solid fa-cart-plus"></i>
 </button>
-<i class="fa-regular fa-star"></i>
-<i class="fa-solid fa-star"></i>
+
 </div>
 </div> 
 `
@@ -543,7 +551,6 @@ function toCart(){
             // console.log(cart_products)
             console.log(choosenProduct)
 
-  // emptyCart()
 }
 toCart()
  
@@ -554,42 +561,35 @@ toCart()
 
 function emptyCart(){
 
-  let cart_product_img = document.createElement("img")
-  cart_product_img.src="./cart is empty.PNG"
-
-  
-  if (cartArray.length === 0 ) {
-   
-    
-    cart_products.appendChild(cart_product_img);
-    count_products.innerHTML = cart_products.children.length-1}
-     
-  else {
-
- cart_product_img.remove()
-    count_products.innerHTML = cart_products.children.length
-   
-          }
+          let cart_product_img = document.createElement("img")
+          cart_product_img.src="./cart is empty.PNG"
+        
+          if (cartArray.length === 0 ) {
+            cart_products.appendChild(cart_product_img);
+            count_products.innerHTML = cart_products.children.length-1}
+            
+          else {
+        cart_product_img.remove()
+            count_products.innerHTML = cart_products.children.length
+          
                   }
+                     }
   emptyCart()   
 
 
 //^ task to remove product from cart
 
 function removeProduct(i){
+            cartArray.splice(i,1)
+            console.log(cartArray)
 
- 
-cartArray.splice(i,1)
-console.log(cartArray)
+            localStorage.cart_products=JSON.stringify(cartArray)
+            count_products.innerHTML=cartArray.length
 
-localStorage.cart_products=JSON.stringify(cartArray)
-count_products.innerHTML=cartArray.length
-
-      // emptyCart(); // call the emptyCart function to update the cart counter
-      calculatePrice()
-      toCart()
-      emptyCart()
-    }
+                  calculatePrice()
+                  toCart()
+                  emptyCart()
+                }
   ;
 
 
@@ -604,34 +604,6 @@ function calculatePrice(){
 }
 calculatePrice()
 
-//* function to search by category or name of product 
-function searchFun(searchInput) {
-  let searchProduct = "";
-  let inputVal = searchInput.toLowerCase().trim().toLocaleLowerCase();
-  for (let i = 0; i < products_js.length; i++) {
-    if (products_js[i].name_product.includes(inputVal)||
-    products_js[i].category.includes(inputVal)) {
-      
-      searchProduct += `
-        <div class="product">
-          <img src=${products_js[i].imgUrl}>
-          <div class="product_details">
-            <h3 class="product_name">${products_js[i].name_product}</h3>
-            <p> ${products_js[i].category}</p>
-            <p> ${products_js[i].price}</p>
-          </div>
-          <div class="product_action">
-            <button class="add_cart" onclick="toArray(${products_js[i].id})">add to cart <i class="fa-solid fa-cart-plus"></i></button>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-      `;
-    }
-  allProducts[0].innerHTML=searchProduct
-
-  }
-}
 
 //* to show drob down 
 
@@ -658,10 +630,18 @@ let all_kichen_products=document.querySelector(".all_kichen_products")
               <p> ${products_js[i].category}</p>
               <p> ${products_js[i].price}</p>
             </div>
+            <div id="container_stars">
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i><br>
+            <span></span>
+
+        </div>
             <div class="product_action">
               <button class="add_cart" onclick="toArray(${products_js[i].id})">add to cart <i class="fa-solid fa-cart-plus"></i></button>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+         
             </div>
           </div>
         `;
@@ -687,10 +667,19 @@ let men_product=""
              <p> ${products_js[i].category}</p>
              <p> ${products_js[i].price}</p>
            </div>
+           <div id="container_stars">
+           <i class="far fa-star"></i>
+           <i class="far fa-star"></i>
+           <i class="far fa-star"></i>
+           <i class="far fa-star"></i>
+           <i class="far fa-star"></i><br>
+           <span></span>
+
+       </div>
            <div class="product_action">
              <button class="add_cart" onclick="toArray(${products_js[i].id})">add to cart <i class="fa-solid fa-cart-plus"></i></button>
-             <i class="fa-regular fa-star"></i>
-             <i class="fa-solid fa-star"></i>
+        
+             
            </div>
          </div>
        `;
@@ -717,10 +706,18 @@ let men_product=""
                <p> ${products_js[i].category}</p>
                <p> ${products_js[i].price}</p>
              </div>
+             <div id="container_stars">
+             <i class="far fa-star"></i>
+             <i class="far fa-star"></i>
+             <i class="far fa-star"></i>
+             <i class="far fa-star"></i>
+             <i class="far fa-star"></i><br>
+             <span></span>
+ 
+         </div>
              <div class="product_action">
                <button class="add_cart" onclick="toArray(${products_js[i].id})">add to cart <i class="fa-solid fa-cart-plus"></i></button>
-               <i class="fa-regular fa-star"></i>
-               <i class="fa-solid fa-star"></i>
+           
              </div>
            </div>
          `;
@@ -746,10 +743,18 @@ let men_product=""
               <p> ${products_js[i].category}</p>
               <p> ${products_js[i].price}</p>
             </div>
+            <div id="container_stars">
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i><br>
+            <span></span>
+
+        </div>
             <div class="product_action">
               <button class="add_cart" onclick="toArray(${products_js[i].id})">add to cart <i class="fa-solid fa-cart-plus"></i></button>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+          
             </div>
           </div>
         `;
@@ -776,61 +781,113 @@ let men_product=""
   //     })}
 
 
-      //*functions to display category block or noe 
+      //*functions to display category block or none
 
-      //& first category
+     
 
       let secproducts       =document.querySelector('.secproducts');
       let secwomen          =document.querySelector('.secwomen');
       let secshoes          =document.querySelector('.secshoes');
       let seckids           =document.querySelector('.seckids');
       let secmen            =document.querySelector('.secmen');
-      let categories        =document.querySelectorAll('.secmen');  
+      let categories        =document.querySelectorAll('.category');  
+      console.log(categories)
       
-    // to show all products randomly
+    //& to show all products randomly
      function showAll(){
-     
-      secproducts.style.display='block';
-      secwomen.style.display='none';
-      secshoes.style.display='none';
-      seckids.style.display='none';
-      secmen.style.display='none';
+      categories.forEach(category=>{
+        category.classList.contains('secproducts')?category .style.display='block' : 
+        category .style.display= 'none'})
+      // secproducts.style.display='block';
+      // secwomen.style.display='none';
+      // secshoes.style.display='none';
+      // seckids.style.display='none';
+      // secmen.style.display='none';
      }
 
-     // to show just women products 
+     //& to show just women products 
      function showwomen(){
-      
-      secproducts.style.display='none';
-      secwomen.style.display='block';
-      secshoes.style.display='none';
-      seckids.style.display='none';
-      secmen.style.display='none';
+      categories.forEach(category=>{
+        category.classList.contains('secwomen')?category .style.display='block' : 
+        category .style.display= 'none'})
      } 
-     // to show just men products 
+     //& to show just men products 
      function showmen(){
-      secproducts.style.display='none';
-      secwomen.style.display='none';
-      secshoes.style.display='none';
-      seckids.style.display='none';
-      secmen.style.display='block';
+      categories.forEach(category=>{
+        category.classList.contains('secmen')?category .style.display='block' : 
+        category .style.display= 'none'})
      }
-      // to show just kides products 
+      //& to show just kides products 
       function showkids(){
-        secproducts.style.display='none';
-   secwomen.style.display='none';
-   secshoes.style.display='none';
-   seckids.style.display='block';
-   secmen.style.display='none';
+        categories.forEach(category=>{
+          category.classList.contains('seckids')?category .style.display='block' : 
+          category .style.display= 'none'})
   } 
-     // to show just shoes products 
+     //& to show just shoes products 
      function showshoes(){
-     
-      secproducts.style.display='none';
-      secwomen.style.display='none';
-      secshoes.style.display='block';
-      seckids.style.display='none';
-      secmen.style.display='none';
+      categories.forEach(category=>{
+        category.classList.contains('secshoes')?category .style.display='block' : 
+        category .style.display= 'none'})
      } 
 
+      //* function to search by category or name of product 
+function searchFun(searchInput) {
+  let searchProduct = "";
+  let inputVal = searchInput.toLowerCase().trim();
+  for (let i = 0; i < products_js.length; i++) {
+    if (products_js[i].name_product.toLowerCase().trim().includes(inputVal)||
+    products_js[i].category.toLowerCase().trim().includes(inputVal)) {
+      
+      searchProduct += `
+        <div class="product">
+          <img src=${products_js[i].imgUrl}>
+          <div class="product_details">
+            <h3 class="product_name">${products_js[i].name_product}</h3>
+            <p> ${products_js[i].category}</p>
+            <p> ${products_js[i].price}</p>
+            <div id="container_stars">
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i><br>
+              <span></span>
+  
+          </div>
+          </div>
+          <div class="product_action">
+            <button class="add_cart" onclick="toArray(${products_js[i].id})">add to cart <i class="fa-solid fa-cart-plus"></i></button>
+          
+          </div>
+        </div>
+      `;
+    }
+  allProducts[0].innerHTML=searchProduct
 
-     
+  }
+}
+
+
+//^ function rating products by stars 
+function rating_fun(){
+  let products =document.querySelectorAll(".product")
+  console.log(products)
+  for (let i = 0; i < products.length; i++) {
+    let stars = products[i].querySelectorAll(".fa-star");
+ 
+    stars.forEach((star,index)=>{
+
+star.addEventListener("click",()=>{
+  stars.forEach(star=>star.classList.remove("fas")) 
+  //& i did this line because if i decided to change my mind it will reset all stars when i click
+  
+  for(let x=0;x<=index;x++)//~to check all before stars
+  stars[x].classList.add("fas")
+  console.log(index+1)
+  let stars_number_statement = products[i].querySelector("span").innerHTML=`${index+1} stars rating`
+})
+    })
+  }
+}
+
+rating_fun()

@@ -11,7 +11,9 @@
 
 }
 body{
-/* background-color: rgb(224, 214, 199); */
+  background-color: #f9f1ec;
+  background-image: linear-gradient(62deg, #f9f1ec 0%, #e5f3f8 100%);
+  
 position: relative;
 
 }
@@ -238,7 +240,7 @@ display: none;
   margin: 20px;
   background-color: white;
   /* border: 5px solid #AF9980; */
-  height: 400px;
+  height: 420px;
   width: 25%;
   overflow: hidden;
   border-radius: 20px;
@@ -275,14 +277,12 @@ display: none;
 width: 50%;
 background-color: #67671b;
 }
-.product_action .fa-star{
-  color:#ffcc33 ;
-  font-size: medium;
-}
+
 
 /*~ favorite star */
-.product_action>.fa-solid{ 
-  display: none;
+.fa-star{
+  color:rgb(228, 216, 50) ;
+  font-size: medium;
 }
 
 /** add to cart icon*/
